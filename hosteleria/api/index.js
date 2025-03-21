@@ -25,13 +25,14 @@ app.get("/platos", async (req, res) => {
       FROM Platos p
       LEFT JOIN AsociacionPlatoCategoria apc ON p.id = apc.plato_id
       LEFT JOIN CategoriasPlato c ON apc.categoria_id = c.id
-      GROUP BY p.id
     `;
     
     // Si se pasa una categoría, añade un filtro a la consulta
     if (categoria) {
       query += " WHERE c.nombre = $1";
     }
+
+    query += " GROUP BY p.id";
 
     const result = await pool.query(query, categoria ? [categoria] : []);
     res.json(result.rows); // Devuelve los platos como JSON
