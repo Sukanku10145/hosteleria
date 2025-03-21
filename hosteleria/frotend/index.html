@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Hostelería</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Carta de Hostelería</h1>
+    <div class="categorias">
+      <label for="categoria">Seleccionar categoría:</label>
+      <select id="categoria" onchange="filtrarPorCategoria()">
+        <option value="">Todas las categorías</option>
+        <!-- Las categorías se cargarán dinámicamente aquí -->
+      </select>
+    </div>
+    <div id="productos" class="productos">
+      <!-- Los productos se cargarán aquí -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
